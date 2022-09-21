@@ -1,9 +1,10 @@
-#include "main.h'
+#include "main.h"
 
 /**
- * *_strcat - concatenates two strings
+ * _strcat - concatenates two strings
  * @dest: input value
  * @src: input value
+ *
  * Return: return value of dest
  */
 
