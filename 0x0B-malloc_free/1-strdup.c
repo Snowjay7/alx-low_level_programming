@@ -12,33 +12,24 @@
  */
 char *_strdup(char *str)
 {
-	char *nstr;
-	unsigned int len, i;
+	char *duplicate;
+	int index, len = 0;
 
-	/* check if str is null */
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
-	len = 0;
-	while (str[len] != '\0')
-	{
+	for (index = 0; str[index]; index++)
 		len++;
-	}
 
-	nstr = malloc(size of(char) * (len + 1));
+	duplicate = malloc(size of(char) * (len + 1));
 
-	/* check if malloc was successful */
-	if (nstr == NULL)
-	{
+	if (duplicate == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < len; i++)
-	{
-		nstr[i] = str[i];
-	}
-	nstr[len] = '\0';
-	return (nstr);
+	for (index = 0; str[index]; index++)
+		duplicate[index] = str[index];
+
+	duplicate[len] = '\0';
+
+	return (duplicate);
 }
