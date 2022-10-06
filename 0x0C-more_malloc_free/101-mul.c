@@ -84,4 +84,25 @@ int main(int argc, char **argv)
 	a = (int *) malloc(len_s1 * sizeof(int));
 	b = (int *) malloc(len_s2 * sizeof(int));
 	ans = _calloc(len, sizeof(int));
-	if
+	if (a == NULL || b == NULL || ans == NULL)
+		Error();
+	for (i = len_s1 - 1, j = 0; i >= 0; i--, j++)
+		*(a + j) = *(s1 + i) - '0';
+	for (i = len_s2 - 1, j = 0; i >= 0; i--, j++)
+		*(b + j) = *(s2 + i) - '0';
+	for (i = 0; i < len_s2; i++)
+		for (j = 0; j < len_s1; j++)
+			*(ans + i + j) = *(ans + i + j) + *(b + i) * *(a + j);
+	for (i = 0; i < len_s1 + len_s2; i++)
+	{
+		carry = *(ans + i) / 10, *(ans + i) = *(ans + i) % 10;
+		*(ans + i + 1) = *(ans + i + 1) + carry; }
+	for (i = len_s1 + len_s2; i >= 0; i--)
+		if (*(ans + i) > 0)
+			break;
+	for (; i >= 0; i--)
+		_putchar(*(ans + 1) + '0');
+	_putchar('\n');
+	free(a), free(b), free(ans);
+	return (0);
+}
