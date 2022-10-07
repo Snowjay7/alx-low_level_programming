@@ -67,21 +67,24 @@ char *iterate_zeroes(char *str)
 }
 
 /**
- * is_digit - checks if a string contains a non-digit char
- * @s: string to be evaluated
- * Return: 0 if a non-digit is found, 1 otherwise
+ * get_digit - Converts a digit character to corresponding int.
+ * @c: The character to be converted
+ *
+ * Description: If c is a non-digit, the function
+ *		exits with a status 0f 98.
+ * Return: The converted int.
  */
-int is_digit(char *s)
+int get_digit(char c)
 {
-	int i = 0;
+	int digit = c - '0';
 
-	while (s[i])
+	if (digit < 0 || digit > 9)
 	{
-		if (s[i] < '0' || s[i] > '9')
-			return (0);
-		i++;
+		printf("Error\n");
+		exit(98);
 	}
-	return (1);
+
+	return (digit);
 }
 
 /**
