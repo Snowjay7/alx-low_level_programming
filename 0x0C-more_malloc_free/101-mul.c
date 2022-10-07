@@ -17,7 +17,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
 int find_len(char *str)
 {
 	int len = 0;
-	
+
 	while (*str++)
 		len++;
 
@@ -39,10 +39,10 @@ char *create_xarray(int size)
 	int index;
 
 	array = malloc(sizeof(char) * size);
-	
+
 	if (array == NULL)
 		exit(98);
-	
+
 	for (index = 0; index < (size - 1); index++)
 		array[index] = 'x';
 
