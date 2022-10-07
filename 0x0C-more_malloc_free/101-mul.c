@@ -147,7 +147,6 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 	int num, tens = 0;
 
 	while (*(final_prod + 1))
-
 		final_prod++;
 
 	while (*(next_prod + 1))
