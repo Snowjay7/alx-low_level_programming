@@ -5,7 +5,7 @@
  * @a: first number
  * @b: second number
  *
- * Return: add
+ * Return: the sum of a and b
  */
 int op_add(int a, int b)
 {
@@ -17,7 +17,7 @@ int op_add(int a, int b)
  * @a: first number
  * @b: second number
  *
- * Return: difference
+ * Return: the difference of a and b
  */
 int op_sub(int a, int b)
 {
@@ -29,7 +29,7 @@ int op_sub(int a, int b)
  * @a: first number
  * @b: second number
  *
- * Return: multiplicatiom
+ * Return: the product of a and b
  */
 int op_mul(int a, int b)
 {
@@ -41,7 +41,7 @@ int op_mul(int a, int b)
  * @a: first number
  * @b: second number
  *
- * Return: division
+ * Return: the quotient of a and b
  */
 int op_div(int a, int b)
 {
@@ -53,7 +53,7 @@ int op_div(int a, int b)
  * @a: first number
  * @b: second number
  *
- * Return: remainder of the division
+ * Return: remainder of the division of a by b
  */
 int op_mod(int a, int b)
 {
