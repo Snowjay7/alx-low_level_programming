@@ -19,7 +19,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (!separator || (separator && !i))
 			printf("%d", va_arg(args, int));
 		else
-			printf("%d", separator, va_arg(args, int));
+			printf("%s%d", separator, va_arg(args, int));
 	}
 	va_end(args);
 	printf("\n");
