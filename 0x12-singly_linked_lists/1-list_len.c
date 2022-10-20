@@ -4,17 +4,18 @@
  * list_len - determines the number of elements in a linked list_t list
  * @h: the list_t linked list
  *
- * Return: the number of element in h
+ * Return: the number of elements
  */
+
 size_t list_len(const list_t *h)
 {
-	int no_elems = 0;
-	const list_t *current = h;
+	size_t element = 0;
 
-	while (current)
+	while (h)
 	{
-		no_elems++;
-		current = current->next;
+		element++;
+		h = h->next;
 	}
-	return (no_elems)
+
+	return (element);
 }
