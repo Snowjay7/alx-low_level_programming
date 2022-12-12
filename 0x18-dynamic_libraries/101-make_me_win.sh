@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -P /tmp https://github.com/snowjay7/alx-low_level_programming/raw/master/0x18-dynamic_libraries/100-operations.so
-export LD_PRELOAD=/tmp/100-operations.so
+wget -P /tmp/ https://raw.github.com./Snowjay7/alx-low_level_programming/master/0x18-dynamic_libraries/lib.so
+export LD_PRELOAD=/tmp/lib.so
