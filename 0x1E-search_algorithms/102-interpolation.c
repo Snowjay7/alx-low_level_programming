@@ -8,32 +8,33 @@
  * @size: the number of elements in array
  * @value: the value to search for
  *
- * Return: the first index where @value is located, else -1
+ * Return: Null, -1the first index where @value is located.
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t l = 0, h = size - 1, n;
+	size_t j, u, s;
 
-	if (!array)
+	if (array == NULL)
 		return (-1);
 
-	while (*(array + h) != *(array + l))
+	for (u = 0, s = size - 1; s >= l;)
 	{
-		n = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
-		if (n >= size)
+		j = u + (((double)(s - u) / (array[s] - array[u])) * (value - array[u]));
+		if (j < size)
+			printf("Value checked array[%ld] = [%d]\n", j, array[j]);
+		else
 		{
-			printf("Value checked array[%ld] is out of range\n", n);
+			printf("Value checked array[%ld] is out of range\n", j);
 			break;
 		}
 
-		printf("Value checked array[%ld] = [%d]\n", n, array[n]);
-		if (*(array + n) < value)
-			l = n + 1;
-		else if (value < *(array + n))
-			h = n - 1;
+		if (array[j] == value)
+			return (j);
+		if (array[j] > value)
+			s = j - 1;
 		else
-			return (m);
+			u = j + 1;
 	}
 
-	return ((array[l] == value) ? (int)l : -1);
+	return (-1);
 }
